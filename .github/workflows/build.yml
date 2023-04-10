@@ -17,7 +17,7 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build
       - name: Rename build artifacts
-        run: mv build/libs/FPS-Display*.jar build/libs/FDPClient_build.jar
+        run: mv build/libs/fpsdisplay-*.jar build/libs/FPS-Display_build.jar
       - name: Upload build artifacts
         uses: actions/upload-artifact@v2
         with:
