@@ -16,10 +16,14 @@ jobs:
         run: chmod +x gradlew
       - name: Build with Gradle
         run: ./gradlew build
+      - name: List files
+        run: ls
+      - name: List files x2
+        run: ls build/libs/
       - name: Rename build artifacts
-        run: mv build/libs/fpsdisplay-*.jar build/libs/FPS-Display_build.jar
+        run: mv build/libs/fpsdisplay-*.jar build/libs/fpsdisplay.jar
       - name: Upload build artifacts
         uses: actions/upload-artifact@v2
         with:
           name: FPS-Display Build
-          path: build/libs/FPS-Display_build.jar
+          path: build/libs/fpsdisplay.jar
